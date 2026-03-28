@@ -1,8 +1,10 @@
 <?php
-// MongoDB Atlas connection string
-// Ensure you have the 'mongodb' extension enabled in php.ini
+/**
+ * MongoDB Connection Script (Atlas)
+ * Uses environment variables with hardcoded fallbacks for Render compatibility.
+ */
 
-$mongo_uri = "mongodb+srv://iglcyborg143_db_user:dU_8rxC4PQHxWdT@cluster0.nay1qeh.mongodb.net/user_system";
+$mongo_uri = getenv("MONGO_URI") ?: "mongodb+srv://iglcyborg143_db_user:dU_8rxC4PQHxWdT@cluster0.nay1qeh.mongodb.net/user_system";
 
 try {
     // Create the MongoDB Manager

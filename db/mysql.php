@@ -1,15 +1,15 @@
 <?php
 /**
  * MySQL Connection Script (Railway)
+ * Uses environment variables with hardcoded fallbacks for Render compatibility.
  */
 
-$mysql_host = getenv("MYSQLHOST") !== false ? getenv("MYSQLHOST") : "gondola.proxy.rlwy.net";
-$mysql_port = getenv("MYSQLPORT") !== false ? getenv("MYSQLPORT") : 45986;
-$mysql_user = getenv("MYSQLUSER") !== false ? getenv("MYSQLUSER") : "root";
-$mysql_pass = getenv("MYSQLPASSWORD") !== false ? getenv("MYSQLPASSWORD") : "DEXLvQAIknfwXuVjiXCArfrWKWSbWNtv";
-$mysql_db   = getenv("MYSQLDATABASE") !== false ? getenv("MYSQLDATABASE") : "railway";
+$mysql_host = getenv("MYSQLHOST") ?: "gondola.proxy.rlwy.net";
+$mysql_port = getenv("MYSQLPORT") ?: 45986;
+$mysql_user = getenv("MYSQLUSER") ?: "root";
+$mysql_pass = getenv("MYSQLPASSWORD") ?: "DEXLvQAIknfwXuVjiXCArfrWKWSbWNtv";
+$mysql_db   = getenv("MYSQLDATABASE") ?: "railway";
 
-// Ensure no warnings break JSON
 mysqli_report(MYSQLI_REPORT_OFF);
 
 try {
@@ -19,7 +19,6 @@ try {
         throw new Exception($mysqli->connect_error);
     }
 } catch (Throwable $e) {
-    // Clean JSON output for connection errors
     if (!headers_sent()) {
         header("Content-Type: application/json; charset=UTF-8");
         http_response_code(500);
