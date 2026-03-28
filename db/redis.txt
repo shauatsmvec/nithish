@@ -1,0 +1,11 @@
+Redis Key-Value Structure:
+
+Key: session:<token>
+Value: <user_id>
+Expiration: 3600 seconds (1 hour)
+
+Example:
+SETEX session:e5b1c8f9... 3600 1
+
+GET session:e5b1c8f9...
+Returns -> "1"

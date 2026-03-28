@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Hedgehog</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="toast-container"></div>
+    <div class="container fade-in" style="max-width: 540px;">
+        <div class="glass-card">
+            <span class="brand-text">Membership</span>
+            <h2>Create Account</h2>
+            <p>Join our elite network with encrypted cross-platform storage.</p>
+            
+            <form id="registerForm">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="form-group">
+                        <label for="username">Handle</label>
+                        <input type="text" id="username" placeholder="Unique username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Valid address" required>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="••••••••" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm_password">Verify</label>
+                        <input type="password" id="confirm_password" placeholder="••••••••" required>
+                    </div>
+                </div>
+                
+                <div style="height: 1px; background: rgba(255, 168, 150, 0.1); margin: 8px 0 24px;"></div>
+
+                <div class="form-group">
+                    <label for="name">Legal Name</label>
+                    <input type="text" id="name" placeholder="First and last name" required>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mobile">Mobile</label>
+                        <input type="tel" id="mobile" placeholder="+1..." required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="dob">Birth Date</label>
+                    <input type="date" id="dob" required>
+                </div>
+                
+                <button type="submit" id="submitBtn" class="btn btn-primary" style="margin-top: 12px;">
+                    <span>Create My Identity</span>
+                </button>
+                
+                <p class="form-footer">Already registered? <a href="login.html">Sign In</a></p>
+            </form>
+        </div>
+    </div>
+    <script src="js/register.js"></script>
+</body>
+</html>

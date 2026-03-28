@@ -1,0 +1,16 @@
+.git
+.gitignore
+Dockerfile
+.dockerignore
+.env
+*.sql
+*.txt
+*.md
+node_modules
+.gemini
+tmp
+CVS
+.svn
+.hg
+.DS_Store
+Thumbs.db
